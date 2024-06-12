@@ -2,13 +2,17 @@
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 
 # oh-my-zsh
-ZSH_THEME="half-life"
+ZSH_THEME="jovial"
 
 plugins=(
-    git
-    zsh-interactive-cd
-    history
-    zsh-autosuggestions
+  git
+  autojump
+  urltools
+  bgnotify
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  zsh-history-enquirer
+  jovial
 )
 ## Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -53,26 +57,6 @@ export NVM_DIR="$HOME/.nvm"
 
 nvm use 20
 
-
-# zsh theme config
-export LSCOLORS="gxfxcxdxbxegedabagacad"
-
-source ~/.oh-my-zsh/themes/headline.zsh-theme
-
-HEADLINE_USER_PREFIX=' '
-HEADLINE_HOST_PREFIX='  '
-HEADLINE_PATH_PREFIX=' '
-HEADLINE_BRANCH_PREFIX=' '
-HEADLINE_USER_TO_HOST=' at '
-HEADLINE_HOST_TO_PATH=' in '
-HEADLINE_PATH_TO_BRANCH=' on '
-HEADLINE_PAD_TO_BRANCH=' on '
-HEADLINE_BRANCH_TO_STATUS=' ('
-HEADLINE_STATUS_TO_STATUS='|'
-HEADLINE_STATUS_END=')'
-HEADLINE_LINE_MODE=off
-HEADLINE_DO_GIT_STATUS_COUNTS=true
-HEADLINE_DO_ERR=true
-
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+export HOMEBREW_NO_AUTO_UPDATE=true
