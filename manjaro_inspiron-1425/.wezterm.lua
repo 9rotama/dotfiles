@@ -7,83 +7,63 @@ if wezterm.config_builder then
 end
 
 
--- _______ _
--- |__   __| |
---    | |  | |__   ___ _ __ ___   ___
---    | |  | '_ \ / _ \ '_ ` _ \ / _ \
---    | |  | | | |  __/ | | | | |  __/
---    |_|  |_| |_|\___|_| |_| |_|\___|
+config.color_scheme = 'Aura (Gogh)'
+config.font_size = 10.0
+
+-- tab bar
+config.use_fancy_tab_bar = false
+config.hide_tab_bar_if_only_one_tab = false
+config.tab_max_width = 50
+
+config.colors = {
+  tab_bar = {
+    background = "#14131A",
+    active_tab = {
+      bg_color = '#14131A',
+      fg_color = '#EDECEE',
+    },
+    inactive_tab = {
+      bg_color = "#24232A",
+      fg_color = '#6D6D6D'
+    },
+    new_tab = {
+      bg_color = "#24232A",
+      fg_color = '#A277FF'
+    },
+  }
+}
+
+config.inactive_pane_hsb = {
+  saturation = 0.9,
+  brightness = 0.8,
+}
 
 
-config.color_scheme = 'nord'
-local dimmer = { brightness = 0.01 }
-
+-- background
 config.background = {
   {
     source = {
-      File = 'wezterm/term-bgb.jpeg'
-    },
-    hsb = dimmer,
-    attachment = { Parallax = 0.005 },
-  },
-  {
-    source = {
-      Color = '#2E3440'
+      Color = "#14131A"
     },
     width = "100%",
     height = "100%",
-    opacity = 0.6
   },
-
-}
-
-config.window_frame = {
-  inactive_titlebar_bg = '#000202',
-  active_titlebar_bg = '#000202',
-  inactive_titlebar_fg = '#cccccc',
-  active_titlebar_fg = '#ffffff',
-  inactive_titlebar_border_bottom = '#2b2042',
-  active_titlebar_border_bottom = '#2b2042',
-  button_fg = '#cccccc',
-  button_bg = '#2b2042',
-  button_hover_fg = '#ffffff',
-  button_hover_bg = '#3b3052',
-  font = wezterm.font('Nerd Font Symbols', { weight = 'Bold', italic = true }),
-  font_size = 11
-}
-config.window_decorations = "RESIZE"
-
--- ______          _
--- |  ____|        | |
--- | |__ ___  _ __ | |_
--- |  __/ _ \| '_ \| __|
--- | | | (_) | | | | |_
--- |_|  \___/|_| |_|\__|
-
-config.freetype_load_flags = "NO_HINTING"
-config.freetype_load_target = "Light"
-config.font = wezterm.font('Iosevka', { weight = "Medium" })
-config.font_size = 10.5
-config.foreground_text_hsb = {
-  hue = 1.0,
-  saturation = 1.0,
-  brightness = 1.5,
-}
-
-config.window_padding = {
-  left = 15,
-  right = 15,
-  top = 15,
-  bottom = 15,
-}
-
-config.keys = {
-  -- This will create a new split and run your default program inside it
   {
-    key = 'd',
-    mods = 'ALT',
-    action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
+    source = {
+      File = '/home/krtm/Pictures/backgrounds/kigupa.jpeg',
+    },
+    width = '100%',
+    repeat_x = 'NoRepeat',
+    vertical_align = 'Middle',
+    attachment = { Parallax = 0.5 },
+    opacity = 0.03
   },
 }
+
+
+-- window
+
+-- control
+
 
 return config
