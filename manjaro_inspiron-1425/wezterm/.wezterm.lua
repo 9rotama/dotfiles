@@ -56,14 +56,11 @@ config.background = {
     repeat_x = 'NoRepeat',
     vertical_align = 'Middle',
     attachment = { Parallax = 0.5 },
-    opacity = 0.03
+    opacity = 0.05
   },
 }
 
-
 -- window
-
 -- control
-
 
 return config
