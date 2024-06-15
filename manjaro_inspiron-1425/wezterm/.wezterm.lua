@@ -71,7 +71,7 @@ wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_wid
     end
 
     if tab.tab_index == 0 then
-        tab_bar_left = " "
+        tab_bar_left = " 🐢 "
     end
 
     return { -- tab bar left
