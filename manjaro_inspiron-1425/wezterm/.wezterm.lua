@@ -155,7 +155,7 @@ config.inactive_pane_hsb = {
 config.background = {{
     source = {
         Gradient = {
-            colors = {colors.BG:saturate(0.3):adjust_hue_fixed(-20), colors.BG:saturate(0.8):adjust_hue_fixed(20)}
+            colors = {colors.BG:saturate(0.3):adjust_hue_fixed(-30), colors.BG:saturate(0.8):adjust_hue_fixed(30)}
         }
     },
     width = "100%",
