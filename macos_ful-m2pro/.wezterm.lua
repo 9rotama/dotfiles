@@ -55,8 +55,6 @@ config.background = {
     },
     repeat_x = 'NoRepeat',
     width = "100%",
-    vertical_align = 'Middle',
-    horizontal_align = 'Middle',
     attachment = { Parallax = 0 },
     opacity = 0.1
   },
