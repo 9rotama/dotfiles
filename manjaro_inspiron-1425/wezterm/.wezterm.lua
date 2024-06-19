@@ -7,7 +7,7 @@ if wezterm.config_builder then
 end
 
 config.color_scheme = 'Aura (Gogh)'
-config.font_size = 11.0
+config.font_size = 10.0
 
 config.font = wezterm.font "Kode Mono"
 
