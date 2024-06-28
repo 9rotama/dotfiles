@@ -21,7 +21,11 @@ source $ZSH/oh-my-zsh.sh
 
 # alias
 alias hs="history | grep"
-alias ls="ls -lhap --color=auto"
+alias ls="lsd -lha --color=auto"
+alias lst="lsd -lha --tree --color=auto"
+alias lstc="lsd --tree --color=auto --icon=never"
+
+
 alias applyconfig="source $HOME/.zshrc"
 
 ## ブランチを簡単切り替え。git checkout lbで実行できる
