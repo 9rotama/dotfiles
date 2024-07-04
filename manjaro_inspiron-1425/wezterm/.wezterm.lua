@@ -9,8 +9,6 @@ end
 config.color_scheme = 'Aura (Gogh)'
 config.font_size = 10.0
 
-config.font = wezterm.font "Kode Mono"
-
 local colors = {
     GRAY = wezterm.color.parse("#6D6D6D"),
     GREEN = wezterm.color.parse("#61FFCA"),
@@ -160,7 +158,7 @@ config.background = {{
     },
     width = "100%",
     height = "100%",
-    opacity = 0.93
+    opacity = 0.99
 }, {
     source = {
         File = '/home/krtm/Pictures/backgrounds/kigupa.jpeg'
