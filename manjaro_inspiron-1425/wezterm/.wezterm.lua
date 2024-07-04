@@ -7,7 +7,11 @@ if wezterm.config_builder then
 end
 
 config.color_scheme = 'Aura (Gogh)'
-config.font_size = 10.0
+config.font_size = 10
+config.font = wezterm.font('JetBrains Mono', {
+    weight = 'Medium'
+});
+config.freetype_render_target = 'HorizontalLcd'
 
 local colors = {
     GRAY = wezterm.color.parse("#6D6D6D"),
@@ -152,13 +156,11 @@ config.inactive_pane_hsb = {
 
 config.background = {{
     source = {
-        Gradient = {
-            colors = {colors.BG:saturate(0.3):adjust_hue_fixed(-30), colors.BG:saturate(0.8):adjust_hue_fixed(30)}
-        }
+        Color = colors.BG:darken(0.5)
     },
     width = "100%",
     height = "100%",
-    opacity = 0.99
+    opacity = 1.0
 }, {
     source = {
         File = '/home/krtm/Pictures/backgrounds/kigupa.jpeg'
@@ -169,10 +171,16 @@ config.background = {{
     attachment = {
         Parallax = 0.5
     },
-    opacity = 0.05
+    opacity = 0.03
 }}
 
 -- window
+config.window_padding = {
+    left = 20,
+    right = 20,
+    top = 20,
+    bottom = 20
+}
 -- control
 
 -- export
