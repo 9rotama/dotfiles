@@ -1,5 +1,3 @@
-
-
 local wezterm = require 'wezterm'
 
 local config = {}
@@ -9,12 +7,11 @@ if wezterm.config_builder then
 end
 
 config.color_scheme = 'Aura (Gogh)'
-config.font_size = 12.0
-config.font = wezterm.font('JetBrains Mono', { weight = 'Medium' })
-config.freetype_load_flags = "NO_AUTOHINT"
-config.freetype_load_target = "HorizontalLcd"
-
-
+config.font_size = 10
+config.font = wezterm.font('JetBrains Mono', {
+    weight = 'Medium'
+});
+config.freetype_render_target = 'HorizontalLcd'
 
 local colors = {
     GRAY = wezterm.color.parse("#6D6D6D"),
@@ -28,7 +25,6 @@ local colors = {
     BLACK_LIGHTEN = wezterm.color.parse("#110F18"):lighten(0.2),
     BG = wezterm.color.parse("#14131A"),
     BG_LIGHTEN = wezterm.color.parse("#14131A"):lighten(0.1)
-
 }
 
 -- tab bar
@@ -159,24 +155,22 @@ config.inactive_pane_hsb = {
 
 config.background = {{
     source = {
-        Gradient = {
-            colors = {colors.BG:saturate(0.3):adjust_hue_fixed(-50), colors.BG:saturate(0.8):adjust_hue_fixed(50)}
-        }
+        Color = colors.BG:darken(0.5)
     },
     width = "100%",
     height = "100%",
-    opacity = 0.93
+    opacity = 1.0
 }, {
     source = {
-        File = '/Users/aoi.meguro/Pictures/backgrounds/cirrusstratus.jpeg'
+        File = '/home/krtm/Pictures/backgrounds/kigupa.jpeg'
     },
     width = '100%',
     repeat_x = 'NoRepeat',
     vertical_align = 'Middle',
     attachment = {
-        Parallax = 0.5
+        Parallax = 0
     },
-    opacity = 0.05
+    opacity = 0.03
 }}
 
 -- window
@@ -185,9 +179,8 @@ config.window_padding = {
     left = 20,
     right = 20,
     top = 20,
-    bottom = 20,
+    bottom = 20
 }
-
 -- control
 
 -- export
