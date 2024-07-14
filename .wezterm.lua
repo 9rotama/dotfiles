@@ -162,7 +162,7 @@ config.background = {{
     opacity = 1.0
 }, {
     source = {
-        File = '/home/krtm/Pictures/backgrounds/kigupa.jpeg'
+        File = '/home/krtm/Pictures/backgrounds/bg.jpeg'
     },
     width = '100%',
     repeat_x = 'NoRepeat',
@@ -181,7 +181,21 @@ config.window_padding = {
     top = 20,
     bottom = 20
 }
+
 -- control
+config.keys = {{
+    key = '_',
+    mods = 'CTRL|SHIFT|ALT',
+    action = wezterm.action.SplitVertical {
+        domain = 'CurrentPaneDomain'
+    }
+}, {
+    key = '|',
+    mods = 'CTRL|SHIFT|ALT',
+    action = wezterm.action.SplitHorizontal {
+        domain = 'CurrentPaneDomain'
+    }
+}}
 
 -- export
 config.colors = {
