@@ -169,7 +169,7 @@ config.background = {{
     repeat_x = 'NoRepeat',
     vertical_align = 'Middle',
     attachment = {
-        Parallax = 0.5
+        Parallax = 0
     },
     opacity = 0.03
 }}
