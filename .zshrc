@@ -9,7 +9,6 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-history-enquirer
-  jovial
 )
 
 source $ZSH/oh-my-zsh.sh
