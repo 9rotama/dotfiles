@@ -6,12 +6,13 @@ if wezterm.config_builder then
     config = wezterm.config_builder()
 end
 
-config.color_scheme = 'Aura (Gogh)'
-config.font_size = 10
+config.color_scheme = 'tokyonight'
+config.font_size = 12.5
 config.font = wezterm.font('JetBrains Mono', {
     weight = 'Medium'
 });
-config.freetype_render_target = 'HorizontalLcd'
+config.line_height = 1.2
+config.freetype_render_target = 'Light'
 
 local colors = {
     GRAY = wezterm.color.parse("#6D6D6D"),
@@ -38,11 +39,11 @@ local tab_title = function(tab_info)
 end
 
 local TAB_EDGE_LEFT = wezterm.nerdfonts.ple_left_half_circle_thick
-local TAB_EDGE_RIGHT = wezterm.nerdfonts.ple_right_half_circle_thick
+local TAB_EDGE_RIGHT = wezterm.nerdfonts.pl_left_hard_divider
 
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = false
-config.tab_max_width = 50
+config.tab_max_width = 150
 
 local tab_bar_config_colors = {
     background = "transparent",
@@ -56,23 +57,21 @@ wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_wid
     local title = tab_title(tab)
     title = ' ' .. title .. ' '
     local tab_bar_background = "transparent"
-    local background = colors.PURPLE_DESATURATE
-    local foreground = colors.BLACK
+    local background = colors.BG_LIGHTEN
+    local foreground = colors.GRAY
     local separator_color = colors.BG_LIGHTEN
     local intensity = "Normal"
     local tab_bar_left = ""
 
     if tab.is_active then
-        background = colors.PURPLE
-        foreground = colors.BLACK
+        foreground = colors.WHITE
         intensity = "Bold"
     elseif hover then
-        background = colors.PURPLE
-        foreground = colors.BLACK
+        foreground = colors.WHITE
     end
 
     if tab.tab_index == 0 then
-        tab_bar_left = " 🐢 "
+        tab_bar_left = " 🦈 "
     end
 
     return { -- tab bar left
@@ -108,14 +107,10 @@ wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_wid
         }
     }, {
         Attribute = {
-            Italic = true
-        }
-    }, {
-        Attribute = {
             Intensity = intensity
         }
     }, {
-        Text = tab.tab_index + 1 .. ". " .. title
+        Text = tab.tab_index + 1 .. ". " .. wezterm.nerdfonts.dev_terminal_badge .. " " .. title
     }, -- right
     {
         Background = {
@@ -140,9 +135,10 @@ wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_wid
             Italic = false
         }
     }, {
-        Text = "|"
+        Text = " "
     }}
 end)
+
 
 -- panes
 
@@ -155,14 +151,14 @@ config.inactive_pane_hsb = {
 
 config.background = {{
     source = {
-        Color = colors.BG:darken(0.5)
+        Color = colors.BG:darken(0.3):saturate(0.2)
     },
     width = "100%",
     height = "100%",
     opacity = 1.0
 }, {
     source = {
-        File = '/home/krtm/Pictures/backgrounds/bg.jpeg'
+        File = wezterm.home_dir .. '/wezterm_bg.jpg'
     },
     width = '100%',
     repeat_x = 'NoRepeat',
@@ -170,7 +166,7 @@ config.background = {{
     attachment = {
         Parallax = 0
     },
-    opacity = 0.03
+    opacity = 0.1
 }}
 
 -- window
@@ -181,6 +177,8 @@ config.window_padding = {
     top = 20,
     bottom = 20
 }
+config.window_decorations = "RESIZE"
+
 
 -- control
 config.keys = {{
