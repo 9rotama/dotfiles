@@ -1,4 +1,4 @@
-# omz
+  # omz
 export ZSH="$HOME/.oh-my-zsh"
 
 plugins=(
@@ -47,5 +47,8 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # other
 export LANG=en_US.UTF-8
+
+# asdf
+. /opt/asdf-vm/asdf.sh
 
 
