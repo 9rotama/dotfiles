@@ -7,11 +7,9 @@ if wezterm.config_builder then
 end
 
 config.color_scheme = 'tokyonight'
-config.font_size = 12.5
-config.font = wezterm.font('JetBrains Mono', {
-    weight = 'Medium'
-});
-config.line_height = 1.2
+
+config.font = wezterm.font('JetBrains Mono');
+config.line_height = 1.3
 config.freetype_render_target = 'Light'
 
 local colors = {
@@ -139,7 +137,6 @@ wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_wid
     }}
 end)
 
-
 -- panes
 
 config.inactive_pane_hsb = {
@@ -166,7 +163,7 @@ config.background = {{
     attachment = {
         Parallax = 0
     },
-    opacity = 0.1
+    opacity = 0.01
 }}
 
 -- window
@@ -178,7 +175,6 @@ config.window_padding = {
     bottom = 20
 }
 config.window_decorations = "RESIZE"
-
 
 -- control
 config.keys = {{
@@ -192,6 +188,12 @@ config.keys = {{
     mods = 'CTRL|SHIFT|ALT',
     action = wezterm.action.SplitHorizontal {
         domain = 'CurrentPaneDomain'
+    }
+}, {
+    key = 'w',
+    mods = 'CTRL',
+    action = wezterm.action.CloseCurrentTab {
+        confirm = true
     }
 }}
 
