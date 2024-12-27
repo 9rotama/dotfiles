@@ -51,4 +51,5 @@ export LANG=en_US.UTF-8
 # asdf
 . /opt/asdf-vm/asdf.sh
 
-
+# discord
+alias discorduwu="~/discorduwu.sh "

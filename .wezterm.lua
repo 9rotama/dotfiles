@@ -6,11 +6,13 @@ if wezterm.config_builder then
     config = wezterm.config_builder()
 end
 
-config.color_scheme = 'tokyonight'
+config.color_scheme = 'Aura (Gogh)'
 
-config.font = wezterm.font('JetBrains Mono');
+config.font = wezterm.font ( '0xProto Nerd Font')              -- font 
+config.font_size = 10   
 config.line_height = 1.3
 config.freetype_render_target = 'Light'
+config.front_end = "WebGpu"
 
 local colors = {
     GRAY = wezterm.color.parse("#6D6D6D"),
