@@ -1,0 +1,12 @@
+[general]
+    import = [
+        "~/.config/alacritty/catppuccin-mocha.toml"
+    ]
+
+
+[font]
+    normal = { family = "0xProto Nerd Font", style = "Regular"}
+    size = 10
+
+[window]
+    padding = {x = 12, y = 12}
