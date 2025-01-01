@@ -1,12 +1,19 @@
+[terminal.shell]
+program = "zellij"
+
 [general]
-    import = [
-        "~/.config/alacritty/catppuccin-mocha.toml"
-    ]
+import = [
+"~/.config/alacritty/catppuccin-mocha.toml"
+]
 
 
 [font]
-    normal = { family = "0xProto Nerd Font", style = "Regular"}
-    size = 10
+normal = { family = "Iosevka Nerd Font", style = "Regular"}
+bold = { family = "Iosevka Nerd Font", style = "Bold"}
+size = 11
 
 [window]
-    padding = {x = 12, y = 12}
+startup_mode = "Maximized"
+
+[cursor]
+style = {shape = "Beam", blinking = "On"}
